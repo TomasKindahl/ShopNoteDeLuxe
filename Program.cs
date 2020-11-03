@@ -10,6 +10,25 @@ namespace ShopNoteDeLuxe
     {
         static void Main(string[] args)
         {
+            string command;
+            List<string> wares = new List<string>();
+            Console.WriteLine("Hej och välkommen till notan!\nSkriv 'sluta' för att sluta!");
+            do
+            {
+                Console.Write("> ");
+                command = Console.ReadLine();
+                if (command == "ny")
+                {
+                    Console.Write("Ange vara: ");
+                    string ware = Console.ReadLine();
+                    Console.WriteLine($"{ware} tillagt!");
+                    wares.Add(ware);
+                }
+                else
+                {
+                    Console.WriteLine($"command is {command}"); // Testutskrift
+                }
+            } while (command != "sluta");
         }
     }
 }
